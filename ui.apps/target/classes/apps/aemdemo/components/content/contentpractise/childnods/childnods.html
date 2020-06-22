@@ -1,0 +1,12 @@
+Child Nodes Iteration
+
+<div data-sly-use.blog="com.aem.demo.core.wcmusepojos.MultiListComponent">
+  <h4>Composite Multifield</h4>
+  <ol data-sly-list.product="${blog.multiItems}">
+     <li>
+         ${product.multinum}
+        ${product.multitext} 
+        ${product.multicheck}
+     </li>
+  </ol>
+</div>

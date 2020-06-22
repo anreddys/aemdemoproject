@@ -1,0 +1,48 @@
+<sly data-sly-include="/libs/wcm/core/components/init/init.jsp"></sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+<sly data-sly-call="${clientlib.all @ categories='we.test.site'}"/>
+<div class="container we-Container--main">
+    <div class="root responsivegrid">
+        <div class="aem-Grid aem-Grid--12 aem-Grid--default--12  ">
+            
+
+           <!--/* <div class="header aem-GridColumn aem-GridColumn--default--12" data-sly-include="header.html"></div>*/-->           
+            <sly data-sly-resource="${'header' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+            
+            <div class="hero-image image parbase aem-GridColumn aem-GridColumn--default--12" style="padding-top: 150px;">
+
+                
+                <!--/*<div>Hero Component</div>*/-->
+
+                
+                <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+                    <div class="aem-GridColumn aem-GridColumn--default--12">
+                        <div class="row">
+						
+						<sly data-sly-resource="${'video' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+						<sly data-sly-resource="${'image' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+						<sly data-sly-resource="${'text' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+						<sly data-sly-resource="${'carousel' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+
+							<!--/*<div class="aem-breadcrumb">Breadcrumb</div>*/-->
+                           <!--/* <div class="we-Header">Title Component</div>*/-->
+                            
+                           <!--/* <div>Responsive Content Area</div>*/-->
+
+
+                        </div>
+                    </div>
+
+                    
+                   <!--/* <form class="page__print">
+                        <input value="Print Friendly" type="submit" />
+                    </form>*/-->
+                   <!--/* <div class="footer aem-GridColumn aem-GridColumn--default--12" data-sly-include="footer.html"></div>*/-->
+                    <sly data-sly-resource="${'footer' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

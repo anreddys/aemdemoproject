@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    multicheck="true"
+    multinum="300"
+    multiText="Text3">
+    <item0
+        jcr:primaryType="nt:unstructured"
+        hello="banglore"
+        welcom="karnataka"/>
+    <item1
+        jcr:primaryType="nt:unstructured"
+        kamal="banglore"
+        raj="hyd"/>
+    <item2
+        jcr:primaryType="nt:unstructured"
+        Rajesh="hyderabad"/>
+</jcr:root>

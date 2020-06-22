@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="cq:Page">
+    <templates/>
+    <policies
+        jcr:created="{Date}2020-05-15T21:43:26.670+05:30"
+        jcr:createdBy="admin"
+        jcr:mixinTypes="[rep:AccessControllable]"
+        jcr:primaryType="nt:unstructured">
+        <aemdemo jcr:primaryType="nt:unstructured">
+            <components jcr:primaryType="nt:unstructured">
+                <form jcr:primaryType="nt:unstructured">
+                    <container jcr:primaryType="nt:unstructured">
+                        <form-container
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="aemdemo Form"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[/apps/aemdemo/components/form/button,/apps/aemdemo/components/form/hidden,/apps/aemdemo/components/form/options,/apps/aemdemo/components/form/text]">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </form-container>
+                    </container>
+                </form>
+            </components>
+        </aemdemo>
+        <wcm jcr:primaryType="nt:unstructured">
+            <foundation jcr:primaryType="nt:unstructured">
+                <components jcr:primaryType="nt:unstructured">
+                    <responsivegrid jcr:primaryType="nt:unstructured">
+                        <policy_1590397570195
+                            jcr:lastModified="{Date}2020-05-25T14:36:36.394+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="mypolicy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="group:aemdemogroup">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_1590397570195>
+                        <policy_16466595987500
+                            jcr:lastModified="{Date}2020-05-25T15:13:49.538+05:30"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="mylogin"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="/apps/aemdemo/components/content/contentpractise/employlogin">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy_16466595987500>
+                    </responsivegrid>
+                </components>
+            </foundation>
+        </wcm>
+        <apps jcr:primaryType="nt:unstructured">
+            <aemdemo jcr:primaryType="nt:unstructured">
+                <components jcr:primaryType="nt:unstructured">
+                    <structure jcr:primaryType="nt:unstructured">
+                        <homepage jcr:primaryType="nt:unstructured">
+                            <policy_1590399883164
+                                jcr:lastModified="{Date}2020-05-25T15:14:59.465+05:30"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="mycss"
+                                sling:resourceType="wcm/core/components/policy/policy"
+                                clientlibs="we.test.site">
+                                <jcr:content jcr:primaryType="nt:unstructured"/>
+                            </policy_1590399883164>
+                        </homepage>
+                    </structure>
+                </components>
+            </aemdemo>
+        </apps>
+    </policies>
+    <template-types/>
+</jcr:root>

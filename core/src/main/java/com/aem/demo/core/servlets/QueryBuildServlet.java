@@ -1,0 +1,95 @@
+/*
+ *  Copyright 2015 Adobe Systems Incorporated
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+package com.aem.demo.core.servlets;
+
+import org.apache.jackrabbit.api.security.user.QueryBuilder;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
+import org.apache.sling.api.servlets.HttpConstants;
+import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.json.simple.JSONObject;
+import org.apache.sling.api.resource.ValueMap;
+import org.osgi.framework.Constants;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import com.aem.demo.core.service.ProductSearchService;
+import com.day.cq.search.PredicateGroup;
+import com.day.cq.search.Query;
+
+import com.day.cq.search.result.Hit;
+import com.day.cq.search.result.SearchResult;
+import com.day.cq.wcm.api.Page;
+
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Servlet that writes some sample content into the response. It is mounted for
+ * all resources of a specific Sling resource type. The
+ * {@link SlingSafeMethodsServlet} shall be used for HTTP methods that are
+ * idempotent. For write operations use the {@link SlingAllMethodsServlet}.
+ */
+@Component(service=Servlet.class,
+property={
+        Constants.SERVICE_DESCRIPTION + "=json Demo Servlet",
+        "sling.servlet.methods=" + HttpConstants.METHOD_GET, "sling.servlet.paths=" + "/bin/sear"            
+})
+
+
+public class QueryBuildServlet extends SlingSafeMethodsServlet {
+	
+	@Reference
+	private ProductSearchService ps;
+
+    private static final long serialVersionUid = 1L;
+    private static final Logger log = LoggerFactory.getLogger(QueryBuildServlet.class);
+
+   
+		
+    @Override
+    protected void doGet(final SlingHttpServletRequest req,
+            final SlingHttpServletResponse resp) throws ServletException, IOException {
+        final Resource resource = req.getResource();
+        String fulltextSearchTerm="Geometrixx";
+             JSONObject searchObj= ps.getSearchProducts(fulltextSearchTerm); 
+             log.info("Search Final *****"+searchObj);
+        
+        
+        
+        
+        
+        
+       }
+}
